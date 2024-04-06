@@ -8,9 +8,19 @@ function App() {
   // const [mp, setMp] = useState(30);
 
   return (
-    <>
+    <div
+      style={{
+        aspectRatio: 9 / 16,
+        height: "100%",
+        width: "100%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        flex: 1,
+      }}
+    >
       <Enemy enemyId={"soldier"} />
-    </>
+    </div>
   );
 }
 

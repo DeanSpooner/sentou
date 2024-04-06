@@ -7,5 +7,5 @@
   "mag": 30,
   "mdf": 30,
   "spd": 30,
-  "attacks": ["slash", "fire", "ice", "lightning", "cure"]
+  "attacks": ["slash1", "fire1", "ice1", "lightning1", "cure1"]
 }
