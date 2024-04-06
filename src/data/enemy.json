@@ -1,0 +1,24 @@
+{
+  "soldier": {
+    "name": "Soldier",
+    "hp": 100,
+    "mp": 20,
+    "str": 20,
+    "def": 20,
+    "mag": 20,
+    "mdf": 20,
+    "spd": 20,
+    "attacks": ["slash", "fire", "ice", "lightning"]
+  },
+  "null": {
+    "name": "Null",
+    "hp": 1,
+    "mp": 0,
+    "str": 1,
+    "def": 1,
+    "mag": 1,
+    "mdf": 1,
+    "spd": 1,
+    "attacks": ["tickle"]
+  }
+}

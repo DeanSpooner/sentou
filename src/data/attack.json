@@ -1,0 +1,103 @@
+{
+  "fire1": {
+    "name": "Flame",
+    "element": "fire",
+    "dmg": 0.1,
+    "mp": 10
+  },
+  "fire2": {
+    "name": "Blaze",
+    "element": "fire",
+    "dmg": 0.2,
+    "mp": 22
+  },
+
+  "fire3": {
+    "name": "Incineration",
+    "element": "fire",
+    "dmg": 0.35,
+    "mp": 40
+  },
+  "ice1": {
+    "name": "Snow",
+    "element": "ice",
+    "dmg": 0.1,
+    "mp": 10
+  },
+  "ice2": {
+    "name": "Blizzard",
+    "element": "ice",
+    "dmg": 0.2,
+    "mp": 22
+  },
+  "ice3": {
+    "name": "Avalanche",
+    "element": "ice",
+    "dmg": 0.35,
+    "mp": 40
+  },
+  "lightning1": {
+    "name": "Spark",
+    "element": "lightning",
+    "dmg": 0.1,
+    "mp": 10
+  },
+  "lightning2": {
+    "name": "Bolt",
+    "element": "lightning",
+    "dmg": 0.2,
+    "mp": 22
+  },
+  "lightning3": {
+    "name": "Thunderclap",
+    "element": "lightning",
+    "dmg": 0.35,
+    "mp": 40
+  },
+  "water1": {
+    "name": "Drizzle",
+    "element": "water",
+    "dmg": 0.1,
+    "mp": 10
+  },
+  "water2": {
+    "name": "Rainstorm",
+    "element": "water",
+    "dmg": 0.2,
+    "mp": 22
+  },
+  "water3": {
+    "name": "Tsunami",
+    "element": "water",
+    "dmg": 0.35,
+    "mp": 40
+  },
+  "cure1": {
+    "name": "First Aid",
+    "element": "cure",
+    "dmg": -0.1,
+    "mp": 5
+  },
+  "cure2": {
+    "name": "Heal",
+    "element": "cure",
+    "dmg": -0.2,
+    "mp": 15
+  },
+  "cure3": {
+    "name": "Renew",
+    "element": "cure",
+    "dmg": -1,
+    "mp": 25
+  },
+  "slash1": {
+    "name": "Slash",
+    "element": "phys",
+    "dmg": 0.05
+  },
+  "tickle": {
+    "name": "Tickle",
+    "element": "phys",
+    "dmg": 0
+  }
+}
