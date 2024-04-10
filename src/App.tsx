@@ -22,14 +22,24 @@ function App() {
       }}
     >
       {!inBattle && (
-        <button
-          onClick={() => {
-            setInBattle(true);
-            return setCurrentEnemy("soldier");
-          }}
-        >
-          Fight soldier
-        </button>
+        <>
+          <button
+            onClick={() => {
+              setInBattle(true);
+              return setCurrentEnemy("forestMagi");
+            }}
+          >
+            Fight Forest Magi
+          </button>
+          <button
+            onClick={() => {
+              setInBattle(true);
+              return setCurrentEnemy("soldier");
+            }}
+          >
+            Fight Soldier
+          </button>
+        </>
       )}
       {inBattle && <Battle enemy={currentEnemy} />}
     </div>

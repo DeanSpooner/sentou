@@ -74,6 +74,8 @@ const AttackMenu = () => {
                 const nextEnemyAttackStats =
                   attackStats[nextEnemyAttack as AttackId];
 
+                console.log({ nextEnemyAttack });
+
                 const nextEnemyAttackDamage =
                   nextEnemyAttackStats.element === "phys"
                     ? getAttackDamage(
@@ -97,7 +99,7 @@ const AttackMenu = () => {
 
                   // If enemy is still alive after the above attack, allow them to attack:
                   if (enemyHp > 0) {
-                    setCurrentEnemyAttack(attacks[idx] as AttackId);
+                    setCurrentEnemyAttack(nextEnemyAttack as AttackId);
                     setCurrentEnemyAttackDamage(nextEnemyAttackDamage);
                     setEnemyMp(enemyMp - nextEnemyAttackStats.mp);
                     setCurrentHp(
@@ -112,7 +114,7 @@ const AttackMenu = () => {
                 const enemyAttacksFirst = () => {
                   setFirstAttacker("enemy");
                   // Select valid enemy attack, make MP cost and damage calculations:
-                  setCurrentEnemyAttack(attacks[idx] as AttackId);
+                  setCurrentEnemyAttack(nextEnemyAttack as AttackId);
                   setCurrentEnemyAttackDamage(nextEnemyAttackDamage);
                   setEnemyMp(enemyMp - nextEnemyAttackStats.mp);
                   setCurrentHp(Math.max(currentHp - nextEnemyAttackDamage, 0));

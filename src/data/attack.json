@@ -12,7 +12,6 @@
     "dmg": 0.2,
     "mp": 22
   },
-
   "fire3": {
     "name": "Incineration",
     "element": "fire",
@@ -95,6 +94,18 @@
     "name": "Slash",
     "element": "phys",
     "dmg": 0.05,
+    "mp": 0
+  },
+  "axe1": {
+    "name": "Axe Swing",
+    "element": "phys",
+    "dmg": 0.06,
+    "mp": 0
+  },
+  "stoneThrow1": {
+    "name": "Stone Throw",
+    "element": "phys",
+    "dmg": 0.02,
     "mp": 0
   },
   "tickle": {

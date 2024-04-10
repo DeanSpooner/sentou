@@ -1,5 +1,17 @@
 {
   "": { "name": "" },
+  "forestMagi": {
+    "name": "Forest Magi",
+    "img": "./sprites/enemy/forester.png",
+    "hp": 65,
+    "mp": 30,
+    "str": 5,
+    "def": 8,
+    "mag": 20,
+    "mdf": 20,
+    "spd": 15,
+    "attacks": ["axe1", "fire1", "stoneThrow1"]
+  },
   "soldier": {
     "name": "Soldier",
     "img": "./sprites/enemy/soldier.png",
