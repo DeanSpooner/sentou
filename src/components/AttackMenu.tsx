@@ -4,7 +4,7 @@ import attackStats from "../data/attack.json";
 import useAttackStore from "../store/attackStore";
 import { AttackId, getAttackDamage } from "../utils/attack";
 import usePlayerStore from "../store/playerStore";
-import { useCurrentEnemyStore, useEnemyStateStore } from "../store/enemyStore";
+import useEnemyStore from "../store/enemyStore";
 import { randomBoolean, randomElement } from "../utils/random";
 
 const AttackMenu = () => {
@@ -28,8 +28,6 @@ const AttackMenu = () => {
     setCurrentMp,
   } = usePlayerStore();
 
-  const { currentEnemy } = useCurrentEnemyStore();
-
   const {
     enemyAttacks,
     enemyDef,
@@ -41,7 +39,7 @@ const AttackMenu = () => {
     enemyStr,
     setEnemyHp,
     setEnemyMp,
-  } = useEnemyStateStore(currentEnemy)();
+  } = useEnemyStore();
 
   const [isOpen, setIsOpen] = useState(false);
 

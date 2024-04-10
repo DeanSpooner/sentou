@@ -5,15 +5,6 @@ import { AttackId } from "../utils/attack";
 
 export interface CurrentEnemyState {
   currentEnemy: EnemyId;
-  setCurrentEnemy: (enemyId: EnemyId) => void;
-}
-
-const useCurrentEnemyStore = create<CurrentEnemyState>(set => ({
-  currentEnemy: "",
-  setCurrentEnemy: (enemyId: EnemyId) => set({ currentEnemy: enemyId }),
-}));
-
-export interface EnemyState {
   enemyName: string;
   enemyHp: number;
   enemyMaxHp: number;
@@ -24,53 +15,59 @@ export interface EnemyState {
   enemyMag: number;
   enemyMdf: number;
   enemySpd: number;
-  setEnemyHp: (hp: number) => void;
-  setEnemyMp: (mp: number) => void;
   enemyAttacks: AttackId[];
   enemyImg: string;
+  setCurrentEnemy: (enemyId: EnemyId) => void;
+  setEnemyHp: (hp: number) => void;
+  setEnemyMp: (mp: number) => void;
 }
 
-const useEnemyStateStore = (enemyId: EnemyId = "") =>
-  create<EnemyState>(set => {
-    const enemyData = enemyStats[enemyId];
-
-    const defaultEnemyState: EnemyState = {
-      enemyName: "",
-      enemyHp: 0,
-      enemyMaxHp: 0,
-      enemyMp: 0,
-      enemyMaxMp: 0,
-      enemyStr: 0,
-      enemyDef: 0,
-      enemyMag: 0,
-      enemyMdf: 0,
-      enemySpd: 0,
-      setEnemyHp: (hp: number) => set({ enemyHp: hp }),
-      setEnemyMp: (mp: number) => set({ enemyMp: mp }),
-      enemyAttacks: [],
-      enemyImg: "",
+const useEnemyStore = create<CurrentEnemyState>(set => ({
+  currentEnemy: "",
+  enemyName: "",
+  enemyHp: 0,
+  enemyMaxHp: 0,
+  enemyMp: 0,
+  enemyMaxMp: 0,
+  enemyStr: 0,
+  enemyDef: 0,
+  enemyMag: 0,
+  enemyMdf: 0,
+  enemySpd: 0,
+  enemyAttacks: [],
+  enemyImg: "",
+  setCurrentEnemy: (enemyId: EnemyId) => {
+    const enemyData = enemyStats[enemyId] as {
+      name: string;
+      img?: string;
+      hp?: number;
+      mp?: number;
+      str?: number;
+      def?: number;
+      mag?: number;
+      mdf?: number;
+      spd?: number;
+      attacks?: AttackId[];
     };
 
-    if ("hp" in enemyData) {
-      console.log(enemyData);
-      return {
-        ...defaultEnemyState,
-        enemyName: enemyData.name,
-        enemyHp: enemyData.hp,
-        enemyMaxHp: enemyData.hp,
-        enemyMp: enemyData.mp,
-        enemyMaxMp: enemyData.mp,
-        enemyStr: enemyData.str,
-        enemyDef: enemyData.def,
-        enemyMag: enemyData.mag,
-        enemyMdf: enemyData.mdf,
-        enemySpd: enemyData.spd,
-        enemyAttacks: enemyData.attacks as AttackId[],
-        enemyImg: enemyData.img,
-      };
-    }
+    set({
+      currentEnemy: enemyId,
+      enemyName: enemyData.name,
+      enemyHp: enemyData.hp ?? 0,
+      enemyMaxHp: enemyData.hp ?? 0,
+      enemyMp: enemyData.mp ?? 0,
+      enemyMaxMp: enemyData.mp ?? 0,
+      enemyStr: enemyData.str ?? 0,
+      enemyDef: enemyData.def ?? 0,
+      enemyMag: enemyData.mag ?? 0,
+      enemyMdf: enemyData.mdf ?? 0,
+      enemySpd: enemyData.spd ?? 0,
+      enemyAttacks: enemyData.attacks ?? [],
+      enemyImg: enemyData.img ?? "",
+    });
+  },
+  setEnemyHp: (hp: number) => set({ enemyHp: hp }),
+  setEnemyMp: (mp: number) => set({ enemyMp: mp }),
+}));
 
-    return defaultEnemyState;
-  });
-
-export { useCurrentEnemyStore, useEnemyStateStore };
+export default useEnemyStore;

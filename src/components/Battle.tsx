@@ -3,7 +3,7 @@ import Player from "./Player";
 import attackStats from "../data/attack.json";
 import enemyStats from "../data/enemy.json";
 import useAttackStore from "../store/attackStore";
-import { useEnemyStateStore } from "../store/enemyStore";
+import useEnemyStore from "../store/enemyStore";
 import usePlayerStore from "../store/playerStore";
 
 const Battle = ({ enemy }: { enemy: EnemyId }) => {
@@ -17,7 +17,7 @@ const Battle = ({ enemy }: { enemy: EnemyId }) => {
 
   const { currentHp } = usePlayerStore();
 
-  const { enemyHp } = useEnemyStateStore(enemy)();
+  const { enemyHp } = useEnemyStore();
 
   const enemyAttackString = () => {
     if (enemyHp > 0) {

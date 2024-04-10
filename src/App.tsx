@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./App.css";
 import Battle from "./components/Battle";
-import { useCurrentEnemyStore } from "./store/enemyStore";
+import useEnemyStore from "./store/enemyStore";
 
 function App() {
-  const { currentEnemy, setCurrentEnemy } = useCurrentEnemyStore();
+  const { currentEnemy, setCurrentEnemy } = useEnemyStore();
 
   const [inBattle, setInBattle] = useState(false);
 

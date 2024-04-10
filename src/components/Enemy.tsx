@@ -1,13 +1,10 @@
 import enemyStats from "../data/enemy.json";
-import { useCurrentEnemyStore, useEnemyStateStore } from "../store/enemyStore";
+import useEnemyStore from "../store/enemyStore";
 
 export type EnemyId = keyof typeof enemyStats;
 
 const Enemy = () => {
-  const { currentEnemy } = useCurrentEnemyStore();
-
-  const { enemyName, enemyImg, enemyHp, enemyMaxHp } =
-    useEnemyStateStore(currentEnemy)();
+  const { enemyName, enemyImg, enemyHp, enemyMaxHp } = useEnemyStore();
 
   return (
     <div
