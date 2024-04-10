@@ -1,14 +1,15 @@
 {
+  "": { "name": "" },
   "soldier": {
     "name": "Soldier",
     "img": "./sprites/enemy/soldier.png",
     "hp": 100,
     "mp": 20,
-    "str": 20,
-    "def": 20,
-    "mag": 20,
-    "mdf": 20,
-    "spd": 20,
+    "str": 10,
+    "def": 10,
+    "mag": 10,
+    "mdf": 10,
+    "spd": 10,
     "attacks": ["slash1", "fire1", "ice1", "lightning1"]
   }
 }

@@ -66,3 +66,7 @@ export const randomElement = <T>(
   // This should not happen, but return undefined to handle edge cases
   return undefined;
 };
+
+export const randomBoolean = () => {
+  return randomInteger(0, 1) === 1;
+};

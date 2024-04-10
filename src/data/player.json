@@ -1,11 +1,11 @@
 {
   "level": 5,
   "hp": 120,
-  "mp": 30,
-  "str": 30,
-  "def": 30,
-  "mag": 30,
-  "mdf": 30,
-  "spd": 30,
+  "mp": 20,
+  "str": 20,
+  "def": 20,
+  "mag": 20,
+  "mdf": 20,
+  "spd": 20,
   "attacks": ["slash1", "fire1", "ice1", "lightning1", "cure1"]
 }

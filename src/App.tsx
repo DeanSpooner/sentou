@@ -1,11 +1,12 @@
-// import { useState } from "react";
+import { useState } from "react";
 import "./App.css";
-import Enemy from "./components/Enemy";
+import Battle from "./components/Battle";
+import { useCurrentEnemyStore } from "./store/enemyStore";
 
 function App() {
-  // const [count, setCount] = useState(0);
-  // const [hp, setHp] = useState(100);
-  // const [mp, setMp] = useState(30);
+  const { currentEnemy, setCurrentEnemy } = useCurrentEnemyStore();
+
+  const [inBattle, setInBattle] = useState(false);
 
   return (
     <div
@@ -14,12 +15,23 @@ function App() {
         height: "100%",
         width: "100%",
         display: "flex",
+        flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
         flex: 1,
       }}
     >
-      <Enemy enemyId={"soldier"} />
+      {!inBattle && (
+        <button
+          onClick={() => {
+            setInBattle(true);
+            return setCurrentEnemy("soldier");
+          }}
+        >
+          Fight soldier
+        </button>
+      )}
+      {inBattle && <Battle enemy={currentEnemy} />}
     </div>
   );
 }
